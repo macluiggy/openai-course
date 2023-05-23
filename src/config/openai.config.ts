@@ -10,12 +10,12 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-async function createCompletion({ prompt }) {
+async function createCompletion({ prompt }: { prompt: string }) {
   const completion = await openai.createCompletion({
-    model: "text-davinci-003",
+    model: "ada",
     prompt,
   });
-  return completion;
+  return completion.data.choices[0].text;
 }
 
 export { createCompletion };
