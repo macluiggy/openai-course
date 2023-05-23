@@ -1,3 +1,6 @@
+// Run: node src/excercices/principle-2-give-model-time-to-think.js
+// if you wonder, the first principle is:
+// Be specific about what you want the model to do.
 import { createCompletion } from "../config/openai.config";
 
 const text = `

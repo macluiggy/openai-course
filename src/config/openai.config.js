@@ -16,7 +16,9 @@ async function createCompletion({ prompt }) {
     prompt,
     best_of: 1,
   });
-  return completion.data.choices[0].text;
+  const text = completion.data.choices[0].text;
+  console.log(text);
+  return text;
 }
 
 export { createCompletion };
