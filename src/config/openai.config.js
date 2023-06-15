@@ -15,6 +15,7 @@ async function createCompletion({ prompt }) {
     model: "text-davinci-003",
     prompt,
     best_of: 1,
+    max_tokens: 100,
   });
   const text = completion.data.choices[0].text;
   console.log(text);
