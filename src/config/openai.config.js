@@ -16,6 +16,7 @@ async function createCompletion({ prompt }) {
     prompt,
     best_of: 1,
     max_tokens: 100,
+    temperature: 1, // the higher the temperature, the more creative
   });
   const text = completion.data.choices[0].text;
   console.log(text);
