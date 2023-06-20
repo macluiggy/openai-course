@@ -23,4 +23,16 @@ async function createCompletion({ prompt }) {
   return text;
 }
 
-export { createCompletion };
+async function createChatCompletion({ messages }) {
+  const completion = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    max_tokens: 100,
+    temperature: 1, // the higher the temperature, the more creative
+    messages,
+  });
+  const text = completion.data.choices[0].message;
+  console.log(text);
+  return text;
+}
+
+export { createCompletion, createChatCompletion };
